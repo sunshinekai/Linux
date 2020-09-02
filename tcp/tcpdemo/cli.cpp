@@ -26,6 +26,8 @@ int main(int argc, char* argv[])
         std::string buf;
         std::cin >> buf;
         ts.Send(buf);
+        // 服务端没有返回数据，意味着客户端TCPsocket套接字当中用的接收缓冲区当中
+        // 并没有数据可接收，recv的flag为0的情况下，则recv接口阻塞等待
         ts.Recv(&buf);
         printf("Server say: %s\n", buf.c_str());
     }
