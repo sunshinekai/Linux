@@ -12,9 +12,7 @@ class UdpSvr
 {
 public:
     UdpSvr(){ _sock = -1;}
-    ~UdpSvr()
-    {}
-
+    ~UdpSvr(){}
     // Socket
     bool CreateSocket()
     {
@@ -57,6 +55,7 @@ public:
         }
         return true;
     }
+    
     // Recv
     // buf:出参，返回给调用者接受到了什么数据
     // srcaddr:这条数据从哪里来的，地址信息是数据源端主机的地址信息
